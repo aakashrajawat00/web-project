@@ -45,7 +45,11 @@
 .tour__rating i,
 .tour__location i {
     font-size: 1rem;
+
+}  
+=======
 }
+
 
 .tour__title{
     margin-top: 1rem;
