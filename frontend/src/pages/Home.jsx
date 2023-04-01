@@ -136,12 +136,15 @@ const Home = () => {
             </h2>
           </Col>
           <Col lg='12'>
+            <MasonryImagesGallery/>
           </Col>
         </Row>
       </Container>
     </section>
     
     {/*================Gallery Section Ends===============*/ }
+   
+
    
   </>
 
