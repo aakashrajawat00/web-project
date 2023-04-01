@@ -5,9 +5,13 @@ import heroImg from '../assets/images/hero-img01.jpg'
 import heroImg02 from '../assets/images/hero-img02.jpg'
 import heroVideo from '../assets/images/hero-video.mp4'
 import worldImg from '../assets/images/world.png'
+import experienceImg from '../assets/images/experience.png'
+
 import Subtitle from '../shared/Subtitle'
 import SearchBar from '../shared/SearchBar'
 import ServiceList from '../services/ServiceList'
+import FeaturedTourList from "../components/Featured-tours/FeaturedTourList"
+import MasonryImagesGallery from '../components/Image-gallery/MasonryImagesGallery'
 
 
 const Home = () => {
@@ -70,10 +74,10 @@ const Home = () => {
       <Container>
         <Row>
           <Col lg='12' className='mb-5'>
-            <Subtitle subtitle={"Explore"}></Subtitle>
+            <Subtitle subtitle={"Explore"} />
             <h2 className='featured__tour-title'> Our Featured tours</h2>
-
           </Col>
+          <FeaturedTourList />
         </Row>
       </Container>
     </section>
@@ -83,7 +87,7 @@ const Home = () => {
     <section>
       <Container>
         <Row>
-          <Col lg='6'></Col>
+          <Col lg='6'>
             <div className="experience__content">
               <Subtitle subtitle={'Experience'}/>
 
@@ -110,11 +114,36 @@ const Home = () => {
                 <h6>Years Experience</h6>
               </div>
             </div>
-          <Col lg='6'></Col>
+          </Col>
+          <Col lg='6'>
+            <div className="experience_img">
+                <img src={experienceImg} alt=''/>
+            </div>
+          </Col>
         </Row>
       </Container>
     </section>
     {/*================Experience Section Ends===============*/ }
+    
+    {/*================Gallery Section Start===============*/ }
+    <section>
+      <Container>
+        <Row>
+          <Col lg='12'>
+            <Subtitle subtitle={'Gallery'}/>
+            <h2 className='gallery_title'>
+              Visit our customer tour gallery
+            </h2>
+          </Col>
+          <Col lg='12'>
+          </Col>
+        </Row>
+      </Container>
+    </section>
+    
+    {/*================Gallery Section Ends===============*/ }
+   
   </>
+
 };
 export default Home
