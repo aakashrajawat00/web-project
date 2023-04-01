@@ -13,7 +13,9 @@ import ServiceList from '../services/ServiceList'
 import FeaturedTourList from "../components/Featured-tours/FeaturedTourList"
 import MasonryImagesGallery from '../components/Image-gallery/MasonryImagesGallery'
 import Testimonials from '../components/Testimonial/Testimonials'
+
 import Newsletter from '../shared/Newsletter'
+
 
 
 const Home = () => {
@@ -145,6 +147,7 @@ const Home = () => {
     </section>
     
     {/*================Gallery Section Ends===============*/ }
+
 
     {/*================Testimonial Section Start===============*/ }
     <section>
