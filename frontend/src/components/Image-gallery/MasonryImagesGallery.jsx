@@ -2,9 +2,8 @@
 
 import React from 'react'
 import galleryImages from './galleryImages'
-import Masonry from 'react-responsive-masonry'
 
-import Mansonry, {ResponsiveMasonry} from 'react-responsive-masonry'
+import Masonry, {ResponsiveMasonry} from 'react-responsive-masonry'
 
 const MasonryImagesGallery = () => {
   return (
