@@ -40,6 +40,8 @@ const quick_links2 = [
 
 
 const Footer = () => {
+
+  const year = new Date().getFullYear()
   return (
     <footer className='footer'>
       <Container>
@@ -49,7 +51,7 @@ const Footer = () => {
               <img src={logo} alt='' />
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, dolorem?</p>
             
-              <div className='social_links d-flex align-items-center gap-4'>
+              <div className='social__links d-flex align-items-center gap-4'>
                 <span>
                   <Link to='#'>
                     <i class="ri-youtube-line"></i>
@@ -84,8 +86,8 @@ const Footer = () => {
             </ListGroup>
           </Col>
           <Col lg="3">
-          <h5 className='footer__link-title'>Quick Links</h5>
-            <ListGroup className='footer__quick-links2'>
+            <h5 className='footer__link-title'>Quick Links</h5>
+            <ListGroup className='footer__quick-links'>
               {quick_links2.map((item, index) => (
                 <ListGroupItem key={index} className='ps-0 border-0'>
                   <Link to={item.path}>{item.display}</Link>
@@ -93,7 +95,41 @@ const Footer = () => {
               ))}
             </ListGroup>
           </Col>
-          <Col lg="3"></Col>
+          <Col lg="3">
+            <h5 className='footer__link-title'>Contact</h5>
+            <ListGroup className='footer__quick-links'>
+                <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
+                  <h6 className='mb-0 d-flex align-items-center gap-2'>
+                    <span>
+                      <i class='ri-map-pin-line'></i>  
+                    </span>
+                    Address:
+                  </h6>
+                  <p className='mb-0'>Boston, MA</p>
+                </ListGroupItem>
+                <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
+                  <h6 className='mb-0 d-flex align-items-center gap-2'>
+                    <span>
+                      <i class='ri-mail-line'></i>  
+                    </span>
+                    Email:
+                  </h6>
+                  <p className='mb-0'>xyz.abc@northeastern.edu</p>
+                </ListGroupItem>
+                <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
+                  <h6 className='mb-0 d-flex align-items-center gap-2'>
+                    <span>
+                      <i class='ri-phone-fill'></i>  
+                    </span>
+                    Phone:
+                  </h6>
+                  <p className='mb-0'>+1(111)222-3333</p>
+                </ListGroupItem>
+            </ListGroup>
+          </Col>
+          <Col lg="12" className='text-center pt-5'> 
+            <p className='copyright'>Copyright {year}, design and develop by Northeastern Students. All rights reserved</p>
+          </Col>
         </Row>
       </Container>
     </footer>
