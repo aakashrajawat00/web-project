@@ -93,14 +93,14 @@ const TourDetails = () => {
 
               </div>
 
-              <div className='review_input'>
+              <div className='review__input'>
                 <input type='text' ref={reviewMsgRef} placeholder='share your thoughts' required />
                 <button className='btn primary__btn text-white'
-                type='submit'></button>
+                type='submit'>Submit</button>
               </div>
             </Form>
 
-            <ListGroup className='user_reviews'>
+            <ListGroup className='user__reviews'>
               {
                 reviews?.map(review=>(
                   <div className='review__item'>
@@ -111,9 +111,9 @@ const TourDetails = () => {
                       <div className='d-flex align-items-center
                       justify-content-between'>
                         <div>
-                          <h5>muhib</h5>
+                          <h5>Vidip</h5>
                           <p>
-                            {new Date('01-18-2023').toLocaleDateString('en-US', options)}
+                            {new Date('04-10-2023').toLocaleDateString('en-US', options)}
                           </p>
                         </div>
                         <span className='d-flex align-items-center'>

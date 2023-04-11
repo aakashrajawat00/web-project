@@ -2,9 +2,12 @@ import React,{useState} from "react";
 import './booking.css'
 import { Form, FormGroup, ListGroup, ListGroupItem, Button } from "reactstrap";
 
+import { useNavigate } from "react-router-dom";
+
 const Booking = ({tour, avgRating }) => {
 
     const {price, reviews} = tour;
+    const navigate = useNavigate()
 
     const [credentials, setcredentials] = useState({
         userId: '01' ,
@@ -24,8 +27,10 @@ const Booking = ({tour, avgRating }) => {
     }; 
 
     const handleClick = e=>{
-        e.preventDefault()
-        console.log(credentials);
+        e.preventDefault();
+
+        navigate('/thank-you')
+        
     }
     return (
     <div className="bookings">
@@ -77,7 +82,7 @@ const Booking = ({tour, avgRating }) => {
 
                 </ListGroupItem>
             </ListGroup>
-            <Button className="btn primary__btn w-100 mt-4" onClick={handleClick}></Button>
+            <Button className="btn primary__btn w-100 mt-4" onClick={handleClick}>Submit</Button>
         </div>
 
     </div>
