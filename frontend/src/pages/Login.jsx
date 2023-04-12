@@ -37,7 +37,7 @@ const handleClick = e =>{
                 <img src={userIcon}/>
               </div>
               <h2>Login</h2>
-              <Form >
+              <Form onSubmit={handleClick}>
                 <FormGroup>
                   <input type="email" placeholder='Email' required id="email" onChange={handleChange}/>
                 </FormGroup>
