@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import {Container, Row, Col, Form, FormGroup, Button} from 'reactstrap';
 import {Link } from 'react-router-dom';
-//import '../styles/login.css'
+import '../styles/login.css'
+
 
 import loginImg from '../assets/images/login.png'
 import userIcon from '../assets/images/user.png'
