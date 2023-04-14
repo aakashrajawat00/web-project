@@ -9,7 +9,7 @@ dotenv.config()
 const app = express()
 const port = process.env.PORT || 8000
 
-//database connection 
+//database connection s
 mongoose.set("strictQuery", false);
 const connect = async() =>{
 try{
