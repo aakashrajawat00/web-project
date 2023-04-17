@@ -43,7 +43,7 @@ export const login = async(req,res) => {
     }
 
     //if user is exist then check the password or compare the password
-    const checkCorrectPassword = bcrypt.compare(req.body.password, user.password)
+    const checkCorrectPassword = await bcrypt.compare(req.body.password, user.password)
 
     //if password is incorrect
     if(!checkCorrectPassword){
@@ -63,7 +63,13 @@ export const login = async(req,res) => {
     res.cookie('accessToken', token, {
         httpOnly: true,
         expires:token.expiresIn
-    }).status(200).json({success:true, message:'sucessfully login', data:{...rest}})
+    })
+    .status(200)
+    .json({
+        token,
+        data:{...rest},
+        role,
+    });
 
     }catch(err) {
         res.status(500).json({success:false, message:'Failed to login'})
