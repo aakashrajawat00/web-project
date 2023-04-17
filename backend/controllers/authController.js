@@ -67,7 +67,7 @@ export const login = async(req,res) => {
     .status(200)
     .json({
         token,
-        data:{...rest},
+        data:{ ...rest},
         role,
     });
 

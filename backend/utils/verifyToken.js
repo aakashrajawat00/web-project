@@ -1,8 +1,8 @@
 
 import jwt from "jsonwebtoken";
 
-const verifyToken = (req, res, next) => {
-    const token = req.cookie.accessToken
+export const verifyToken = (req, res, next) => {
+    const token = req.cookies.accessToken
 
     if (!token) {
         return res.status(401).json({ success: false, message: "You're not authorize" })
@@ -20,21 +20,21 @@ const verifyToken = (req, res, next) => {
 }
 
 export const verifyUser = (req, res, next) => {
-    verifyToken = (req, res, next, () => {
+    verifyToken(req, res, next, () => {
         if (req.user.id === req.params.id || req.user.role === 'admin') {
             next();
         } else {
-            return res.status(401).json({ success: false, message: "You're not authenticated" })
+            return res.status(401).json({ success: false, message: "You're not authenticated" });
         }
     });
 };
 
 export const verifyAdmin = (req, res, next) => {
-    verifyToken = (req, res, next, () => {
+    verifyToken(req, res, next, () => {
         if (req.user.role === 'admin') {
             next();
         } else {
-            return res.status(401).json({ success: false, message: "You're not authorize" })
+            return res.status(401).json({ success: false, message: "You're not authorize" });
         }
     });
 };
