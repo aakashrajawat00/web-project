@@ -61,9 +61,10 @@
 }
 
 .auth__btn{
-    background: var(--heading-color);
+    background: var(--heading-color) !important;
     width: 100%;
-    color: #fff;
+    color: #fff !important;
+
 }
 
 .login__form p{
