@@ -43,7 +43,7 @@ outline: none;
 @media only screen and (max-width:992px){
     .search__bar{
         width: 100%;
-        border-radius: 2rems;
+        border-radius: 2rem;
     }
 
     .search__bar form{
