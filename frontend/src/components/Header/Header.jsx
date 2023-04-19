@@ -24,10 +24,12 @@ const nav_links = [
 ]
 const Header = () => {
 
+
   const headerRef = useRef(null);
   const menuRef = useRef(null);
   const navigate = useNavigate();
   const {user, dispatch} = useContext(AuthContext);
+
 
   const logout = ()=>{
     dispatch({type:'LOGOUT'})
