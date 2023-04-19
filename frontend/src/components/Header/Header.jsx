@@ -1,6 +1,8 @@
+
 import React, { useRef, useEffect, useContext } from 'react'
 import { Container, Row, Button } from 'reactstrap'
 import { NavLink, Link, useNavigate } from 'react-router-dom'
+
 import logo from '../../assets/images/logo.png'
 import "./Header.css"
 import { AuthContext } from '../../context/AuthContext'
@@ -22,7 +24,7 @@ const nav_links = [
 ]
 const Header = () => {
 
-  const headerRef = useRef(null);
+const headerRef = useRef(null);
   const navigate = useNavigate()
   const {user, dispatch} = useContext(AuthContext)
 
@@ -30,6 +32,7 @@ const Header = () => {
     dispatch({type:'LOGOUT'})
     navigate('/')
   }
+
 
   const stickyHeaderFunc = () => {
     window.addEventListener('scroll', () => {
