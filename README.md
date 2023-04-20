@@ -33,8 +33,6 @@ About Us <br>
 Tour details page<br>
 Bookings page<br>
 Manage bookings page (for users)<br>
-Manage tours page (for admins)<br>
-Manage users page (for admins)<br>
 Login page<br>
 
 
@@ -53,7 +51,6 @@ Express.js<br>
 MongoDB<br>
 Bootstrap<br>
 bcrypt<br>
-Heroku<br>
 
 ### Contributors
 Aakash Rajawat <br>
