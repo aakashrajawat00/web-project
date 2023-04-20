@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardBody } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import calculateAvgRating from '../utils/avgRating';
+import StripeCheckout from 'react-stripe-checkout';
 
 import './tour-card.css';
 
@@ -10,6 +11,24 @@ const TourCard = ({ tour }) => {
   const { _id, title, city, photo, price, featured, reviews } = tour;
 
   const { totalRating, avgRating } = calculateAvgRating(reviews)
+
+  const [setPaid] = useState(false);
+
+  const handleToken = (token) => {
+    // make API call to your server to process payment
+    fetch('/charge', {
+      method: 'POST',
+      body: JSON.stringify(token)
+    })
+    .then(response => {
+      // payment successful
+      setPaid(true);
+    })
+    .catch(error => {
+      // payment failed
+      console.error(error);
+    });
+  }
 
   return <div className='tour__card'>
     <Card>
@@ -40,11 +59,18 @@ const TourCard = ({ tour }) => {
         <div className="card__bottom d-flex align-items-center justify-content-between mt-3">
           <h5>${price} <span> /per person</span></h5>
 
-          <button className="btn booking__btn">
-            <Link to={`/tours/${_id}`}>Book Now</Link>
-
-          </button>
-
+          <StripeCheckout
+            token={handleToken}
+            stripeKey='sk_test_51Myjc0JNnJKzFds8X4VrUY8d6UZTiIwgI03ekqVwXAmeAGgpjMbqSny0hPVQDVxUHX8PI80xm5PGLojAHpgVQzJd00W7Bwbk7D'
+            amount={price * 100} // amount in cents
+            currency='USD'
+            name='Tour Booking'
+            billingAddress
+            shippingAddress
+          >
+            <button className="btn booking__btn">Book Now</button>
+          </StripeCheckout>
+              
         </div>
       </CardBody>
     </Card>
@@ -54,6 +80,3 @@ const TourCard = ({ tour }) => {
 };
 
 export default TourCard;
-
-
-

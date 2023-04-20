@@ -14,75 +14,125 @@ import { BASE_URL } from '../utils/config';
 
 const Register = () => {
   const [credentials, setCredentials] = useState({
-    userName:undefined,
-    email:undefined,
-    password:undefined,
+    username: "",
+    email: "",
+    password: "",
+  });
 
-});
+  const { dispatch } = useContext(AuthContext);
+  const navigate = useNavigate();
 
-  const {dispatch} = useContext(AuthContext)
-  const navigate = useNavigate()
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    let errorMessage = "";
 
-  const handleChange = e => {
-    setCredentials(prev=>({...prev, [e.target.id]:e.target.value}))
+    // Validation for username
+    if (id === "username") {
+      if (value.length < 7) {
+        errorMessage = "Username must be at least 7 characters long.";
+      } else if (!/^[a-zA-Z0-9]+$/.test(value)) {
+        errorMessage = "Username should not contain special characters.";
+      }
+    }
 
-}; 
+    // Validation for email
+    if (id === "email") {
+      if (!/\S+@\S+\.\S+/.test(value)) {
+        errorMessage = "Invalid email address.";
+      }
+    }
 
-const handleClick = async e =>{
-  e.preventDefault();
+    // Validation for password
+    if (id === "password") {
+      if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}/.test(value)) {
+        errorMessage =
+          "Password should contain at least 1 uppercase, 1 lowercase, 1 numeric, 1 special character and 1 letter.";
+      }
+    }
 
-  try {
-    const res = await fetch(`${BASE_URL}/auth/register`,{
-      method:'post',
-      headers:{
-        'content-type':'application/json'
-      },
-      body: JSON.stringify(credentials)
-    })
-    const result = await res.json()
+    setCredentials((prev) => ({ ...prev, [id]: value }));
 
-    if(!res.ok) alert(result.message)
-    dispatch({type:'REGISTER_SUCCESS'})
-    navigate('/login')
-  } catch (err) {
-    alert(err.message);
-    
-  }
+    e.target.setCustomValidity(errorMessage);
+  };
+
+  const handleClick = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch(`${BASE_URL}/auth/register`, {
+        method: "post",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(credentials),
+      });
+      const result = await res.json();
+
+      if (!res.ok) alert(result.message);
+      dispatch({ type: "REGISTER_SUCCESS" });
+      navigate("/login");
+    } catch (err) {
+      alert(err.message);
+    }
+  };
+
+  return (
+    <section>
+      <Container>
+        <Row>
+          <Col lg="8" className="m-auto">
+            <div className="login__container d-flex justify-content-between">
+              <div className="login__img">
+                <img src={registerImg} alt=""></img>
+              </div>
+              <div className="login__form">
+                <div className="user">
+                  <img src={userIcon} alt="" />
+                </div>
+                <h2>Register</h2>
+                <Form onSubmit={handleClick}>
+                  <FormGroup>
+                    <input
+                      type="text"
+                      placeholder="Username"
+                      required
+                      id="username"
+                      onChange={handleChange}
+                    />
+                  </FormGroup>
+                  <FormGroup>
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      required
+                      id="email"
+                      onChange={handleChange}
+                    />
+                  </FormGroup>
+                  <FormGroup>
+                    <input
+                      type="password"
+                      placeholder="Password"
+                      required
+                      id="password"
+                      onChange={handleChange}
+                    />
+                  </FormGroup>
+                  <Button className="btn secondary__btn auth__btn" type="submit">
+                    Create Account
+                  </Button>
+                </Form>
+                <p>
+                  Already have an account?<Link to="/login">Login</Link>
+                </p>
+              </div>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </section>
+  );
 };
 
-  return <section>
-    <Container>
-      <Row>
-        <Col lg='8' className='m-auto'>
-          <div className='login__container d-flex justify-content-between'>
-            <div className='login__img'>
-              <img src={registerImg} alt="" ></img>
-
-            </div>
-            <div className="login__form">
-              <div className="user">
-                <img src={userIcon} alt=""/>
-              </div>
-              <h2>Register</h2>
-              <Form onSubmit={handleClick}>
-              <FormGroup>
-                  <input type="text" placeholder='Username' required id="username" onChange={handleChange}/>
-                </FormGroup>
-                <FormGroup>
-                  <input type="email" placeholder='Email' required id="email" onChange={handleChange}/>
-                </FormGroup>
-                <FormGroup>
-                  <input type="password" placeholder='Password' required id="password" onChange={handleChange}/>
-                </FormGroup>
-                <Button className='btn secondary__btn auth__btn' type='submit'>Create Account</Button>
-              </Form>
-              <p>Already have an account?<Link to='/login'>Login</Link></p>
-            </div>
-          </div>
-        </Col>
-      </Row>
-    </Container>
-  </section>
-}
 
 export default Register;

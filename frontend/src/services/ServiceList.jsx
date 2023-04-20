@@ -9,17 +9,17 @@ import customizationImg from '../assets/images/customization.png'
 const servicesData =[
     {
         imgUrl: weatherImg,
-        title: "Calculate Weather",
-        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        title: "Check Weather",
+        desc: "Plan ahead with ease by checking the weather for your destination on our website.",
       },
       {
         imgUrl: guideImg,
         title: "Best Tour Guide",
-        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        desc: "Discover the world with our expertly crafted travel guides and explore the history of the place.",
        },
        { imgUrl: customizationImg,
         title: "Customization",
-        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        desc: "Tailor your travel experience to your preferences with our customizable tour packages.",
        },
 ]
 const serviceList = () => {

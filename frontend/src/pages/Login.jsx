@@ -60,12 +60,12 @@ const handleClick = async e =>{
         <Col lg='8' className='m-auto'>
           <div className='login__container d-flex justify-content-between'>
             <div className='login__img'>
-              <img src={loginImg} ></img>
+              <img src={loginImg} alt=""></img>
 
             </div>
             <div className="login__form">
               <div className="user">
-                <img src={userIcon}/>
+                <img src={userIcon} alt=""/>
               </div>
               <h2>Login</h2>
               <Form onSubmit={handleClick}>

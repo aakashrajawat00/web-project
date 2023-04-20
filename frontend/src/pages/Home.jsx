@@ -32,7 +32,11 @@ const Home = () => {
 
               </div>
               <h1>Traveling Opens the door to creating <span className="highlight">memories</span></h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam delectus dolor, natus ex quos possimus maiores magnam consectetur voluptas nulla, eius illo totam suscipit nostrum hic iure voluptate mollitia quaerat.</p>
+              <div class="intro-section">
+                <h5>Welcome to our Travel Website!</h5>
+                <p>Discover your dream destination and start planning your perfect getaway with our all-in-one travel platform. Whether you're seeking to book luxury hotels, plan adventure-packed itineraries, or secure custom tour packages, we offer a comprehensive range of resources and services to cater to your every travel need.</p>
+                <p>Our user-friendly interface and seamless booking experience ensure that planning your next vacation is effortless and enjoyable. With our visually stunning website design, you'll be inspired to embark on your next adventure. So why wait? Start planning your ideal vacation today and let us take care of the rest.</p>
+              </div>
 
             </div>
           </Col>
@@ -98,9 +102,9 @@ const Home = () => {
               <h2>
                 With our all experience <br/> we will serve you
               </h2>
-              <p>Lorem ipsum dolor sit amet, 
+              <p>"Experience hassle-free and memorable travels with our top-notch customer service."
                 <br/>
-                Quas aliquam,
+                
               </p>
             </div>
 
