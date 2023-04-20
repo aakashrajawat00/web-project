@@ -18,12 +18,10 @@ Database:- MongoDB <br>
 
 ## Features
 User registration and login with encrypted passwords.<br>
-User can browse and search for tours by location, duration, and date. <br>
+User can browse and search for tours by location, distance, and date. <br>
 User can view detailed information about each tour. <br>
-User can book a tour and manage their bookings. <br>
+User can book a tour bookings. <br>
 Admin can manage tours, bookings, and users.<br>
-Payment gateway API integration for e-commerce transactions.<br>
-External APIs used for weather information and maps.<br>
 
 
 ### Pages
@@ -32,16 +30,15 @@ Tours page<br>
 About Us <br>
 Tour details page<br>
 Bookings page<br>
-Manage bookings page (for users)<br>
 Login page<br>
 
 
 ### Installation<br>
 Clone the repository<br>
-Install dependencies: npm install<br>
-Start the server: npm start<br>
+Install dependencies both in frontend and backend : npm install<br>
+Start the frontend: npm start<br>
+Start the backend :- npm start run-dev <br>
 Open the application in your browser at http://localhost:3000<br>
-API Documentation<br>
 See the API documentation in the docs folder.<br>
 
 ### TechStack Used
@@ -53,11 +50,11 @@ Bootstrap<br>
 bcrypt<br>
 
 ### Contributors
-Aakash Rajawat <br>
-Vatsal Mehta <br>
-Vidip Kamdar <br>
-Harsh Jain <br>
-Darshit Shah <br>
+Aakash Rajawat(002764127) <br>
+Vatsal Mehta(002912412) <br>
+Vidip Kamdar(002701593) <br>
+Harsh Jain(002747565) <br>
+Darshit Shah(002762097) <br>
 
 
 
