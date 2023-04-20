@@ -1,11 +1,16 @@
 import React from 'react';
+
+
+
 import { Link } from 'react-router-dom';
+
 import StripeCheckout from 'react-stripe-checkout';
 
 
 const payment = ({ tour }) => {
 
-  const { _id, title, city, photo, price, featured, reviews } = tour;
+
+  const {  city, photo, price, featured } = tour;
 
 
 

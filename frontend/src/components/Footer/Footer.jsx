@@ -125,7 +125,7 @@ const Footer = () => {
             </ListGroup>
           </Col>
           <Col lg="12" className='text-center pt-5'> 
-            <p className='copyright'>Copyright {year}, design and develop by Northeastern Students. All rights reserved</p>
+            <p className='copyright'>&copy; Copyright {year}, Design and Develop by Northeastern Students. All rights reserved.</p>
           </Col>
         </Row>
       </Container>
