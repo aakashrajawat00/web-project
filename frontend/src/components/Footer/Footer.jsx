@@ -23,10 +23,7 @@ const quick_links = [
 ];
 
 const quick_links2 = [
-  {
-    path: './gallery',
-    display: 'Gallery'
-  },
+  
   {
     path: '/login',
     display: 'Login'
@@ -49,7 +46,7 @@ const Footer = () => {
           <Col lg='3'>
             <div className='logo'>
               <img src={logo} alt='' />
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, dolorem?</p>
+              <p>"Explore the world, one adventure at a time with our travel website."</p>
             
               <div className='social__links d-flex align-items-center gap-4'>
                 <span>
@@ -114,7 +111,7 @@ const Footer = () => {
                     </span>
                     Email:
                   </h6>
-                  <p className='mb-0'>xyz.abc@northeastern.edu</p>
+                  <p className='mb-0'><a href='mailto:travel@travel.com'> &nbsp;&nbsp;&nbsp; travel@travel.com</a></p>
                 </ListGroupItem>
                 <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
                   <h6 className='mb-0 d-flex align-items-center gap-2'>
@@ -123,7 +120,7 @@ const Footer = () => {
                     </span>
                     Phone:
                   </h6>
-                  <p className='mb-0'>+1(111)222-3333</p>
+                  <p className='mb-0'><a href="tel:+19985896587">&nbsp;&nbsp;+1(998)589-6587</a></p>
                 </ListGroupItem>
             </ListGroup>
           </Col>
