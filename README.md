@@ -24,12 +24,12 @@ User can book a tour and manage their bookings. <br>
 Admin can manage tours, bookings, and users.<br>
 Payment gateway API integration for e-commerce transactions.<br>
 External APIs used for weather information and maps.<br>
-Hosted on Heroku server.<br>
 
 
 ### Pages
 Home page<br>
 Tours page<br>
+About Us <br>
 Tour details page<br>
 Bookings page<br>
 Manage bookings page (for users)<br>
@@ -46,7 +46,7 @@ Open the application in your browser at http://localhost:3000<br>
 API Documentation<br>
 See the API documentation in the docs folder.<br>
 
-### TeachStack Used
+### TechStack Used
 React<br>
 Node.js<br>
 Express.js<br>
