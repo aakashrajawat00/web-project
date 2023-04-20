@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardBody } from 'reactstrap';
 import { Link } from 'react-router-dom';
@@ -12,7 +13,9 @@ const TourCard = ({ tour }) => {
 
   const { totalRating, avgRating } = calculateAvgRating(reviews)
 
+
   const [setPaid] = useState(false);
+
 
   const handleToken = (token) => {
     // make API call to your server to process payment

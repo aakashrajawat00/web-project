@@ -78,6 +78,7 @@ const About = () => {
         alt="team member"
       />
       <div className="card-body">
+
         <h5 className="card-title">Vidip Kamdar</h5>
         <p className="card-text">Student</p>
       </div>

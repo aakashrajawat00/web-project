@@ -1,9 +1,14 @@
 import React from 'react';
-//import { Link } from 'react-router-dom';
+
+
+
+import { Link } from 'react-router-dom';
+
 import StripeCheckout from 'react-stripe-checkout';
 
 
 const payment = ({ tour }) => {
+
 
   const {  city, photo, price, featured } = tour;
 
