@@ -32,7 +32,7 @@ const Booking = ({tour, avgRating }) => {
 
     const validateFullName = (fullName) => {
         const regex = /\d/;
-        return fullName.length >= 7 && !regex.test(fullName);
+        return fullName.length >= 3 && !regex.test(fullName);
       }
       
 
@@ -66,7 +66,7 @@ const Booking = ({tour, avgRating }) => {
             }
 
             if (!validateFullName(booking.fullName)) {
-                return alert("Full Name should not contain any digit and have minimum 7 characters");
+                return alert("Full Name should not contain any digit and have minimum 3 characters");
             }
 
             if (!validatePhone(booking.phone)) {

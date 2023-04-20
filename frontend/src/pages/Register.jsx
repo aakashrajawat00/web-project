@@ -28,8 +28,8 @@ const Register = () => {
 
     // Validation for username
     if (id === "username") {
-      if (value.length < 7) {
-        errorMessage = "Username must be at least 7 characters long.";
+      if (value.length < 3) {
+        errorMessage = "Username must be at least 3 characters long.";
       } else if (!/^[a-zA-Z0-9]+$/.test(value)) {
         errorMessage = "Username should not contain special characters.";
       }
