@@ -95,6 +95,7 @@ const Booking = ({tour, avgRating }) => {
                 return alert(result.message);
             }
             navigate('/thank-you');
+            //navigate('/payment')
         } catch (err) {
             alert(err.message);
         }
